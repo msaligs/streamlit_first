@@ -1,7 +1,27 @@
 import streamlit as st
 
-st.title("my first streamlit app")
-user_input = st.text_input("enter your name")
-num_input = st.color_picker("choose color")
+st.title("Simple Calculator")
+user_name = st.text_input("Enter your name")
 
-st.write("Hello ",user_input, num_input)
+num_1 = st.number_input("Enter a number",step=1)
+num_2 = st.number_input("Enter second number",step=1)
+
+operation = st.selectbox("Select an operation",["Addition","Subtraction","Multiplication","Division"])
+result = None
+
+calculate_button = st.button("Calculate")
+if calculate_button:
+    
+    if operation == "Addition":
+        result = num_1 + num_2
+    elif operation == "Subtraction":
+        result = num_1 - num_2 
+    elif operation == "Multiplication":
+        result = num_1 * num_2 
+    elif operation == "Division":
+        if num_2 != 0:
+            result = num_1 / num_2 
+
+    if 'result' in locals():
+        st.write(f"Hello {user_name}")
+        st.write(f"Result of {num_1} {operation.lower()} {num_2} = {result}")
