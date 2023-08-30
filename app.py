@@ -30,9 +30,9 @@ import streamlit as st
 # ====================assignment task =========================================
 
 st.title("Finding the largest of 3 numbers")
-num1 = st.number_input("enter first number",step=1)
-num2 = st.number_input("enter second number",step=1)
-num3 = st.number_input("enter third number",step=1)
+num1 = st.number_input("enter first number",step=1,value=10)
+num2 = st.number_input("enter second number",step=1,value=15)
+num3 = st.number_input("enter third number",step=1,value=8)
 find_button = st.button("Find")
 
 if find_button:
